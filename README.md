@@ -1,6 +1,6 @@
-# Data Visualisation using Oracle Jet
+# Data Visualization using Oracle Jet
 
-![capture](./captures/capture.PNG "preview")
+![capture](./captures/Capture.PNG "preview")
 
 ## Project Setup
 
