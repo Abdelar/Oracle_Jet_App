@@ -29,7 +29,7 @@ define([
     var barGroups = ["Group A", "Group B"];
 
     //conversion methods
-    var convert = data =>
+    const convert = data =>
       data
         .split("\n")
         .filter(line => line)
@@ -38,7 +38,7 @@ define([
         })
         .filter(row => row !== []);
 
-    var construct = array => {
+    const construct = array => {
       const data = [];
       array.forEach(element => {
         const entry = { name: element[0] };
@@ -47,7 +47,7 @@ define([
       });
       return data;
     };
-    var constructGroups = data => {
+    const constructGroups = data => {
       const groupsNumbers = convert(data)[0].length;
       const groups = [];
       for (let i = 0; i < groupsNumbers - 1; i++) {
@@ -59,9 +59,9 @@ define([
     //Event Listener
 
     self.convertData = function(event, data, bindingContext) {
-      // data.data("Series1\t21\t67\nSeries2\t39\t45\nSeries3\t62\t17"); exemple of input
-      barSeries = construct(convert(self.data));
-      barGroups = constructGroups(self.data);
+      rawData.data("Series1\t21\t67\nSeries2\t39\t45\nSeries3\t62\t17"); // exemple of an input
+      barSeries = construct(convert(self.rawData));
+      barGroups = constructGroups(self.rawData);
     };
 
     self.barSeriesValue = ko.observableArray(barSeries);
