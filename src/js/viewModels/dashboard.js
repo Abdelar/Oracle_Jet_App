@@ -59,7 +59,6 @@ define([
     //Event Listener
 
     self.convertData = function(event, data, bindingContext) {
-      rawData.data("Series1\t21\t67\nSeries2\t39\t45\nSeries3\t62\t17"); // exemple of an input
       barSeries = construct(convert(self.rawData));
       barGroups = constructGroups(self.rawData);
     };
